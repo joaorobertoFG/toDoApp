@@ -242,3 +242,24 @@ html {
   text-decoration: line-through; /* Adiciona um risco no texto */
 }
 
+@media (max-width: 480px) {
+  .todo-input {
+    width: 15em; /* Reduz mais o tamanho do input */
+  }
+
+  .todo-input--btn {
+    width: 40px;
+    font-size: 24px;
+  }
+
+  .tasks {
+    width: 21em;
+    margin: 0;
+  }
+
+  .card {
+    width: 25em;
+    height: 35em;
+    font-size: 16px; /* Ajuste para dispositivos bem pequenos */
+  }
+}
