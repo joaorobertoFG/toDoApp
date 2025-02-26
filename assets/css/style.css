@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  font-family: "Roboto", serif;
+  --primary-color: linear-gradient(
+    to right top,
+    #00160f,
+    #031715,
+    #091718,
+    #101719,
+    #151719,
+    #18191a,
+    #1a1a1b,
+    #1c1c1c,
+    #1f1f1f,
+    #212121,
+    #242424,
+    #272727
+  );
+}
+
+html {
+  font-family: "Roboto", serif;
+  background-image: var(--primary-color);
+  color: #ced4da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todo-input {
+  border: transparent;
+  border-radius: 50px;
+  width: 300px;
+  height: 40px;
+  white-space: nowrap;
+  outline: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.todo-input--btn {
+  background-color: #66d2ce;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border-radius: 0px 25px 25px 0px;
+  border: transparent;
+  text-align: center;
+  height: 42px;
+  width: 50px;
+  position: relative;
+  right: 19px;
+  transition: 500ms;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-input--btn:hover {
+  cursor: pointer;
+}
+
+.todo__input-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.tasks {
+  display: flex;
+  margin: 0 30px;
+  width: 17.8em;
+  height: 18em;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.task--div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  width: 21em;
+  height: 27em;
+  margin: 0 auto;
+  background-color: #011522;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.line {
+  border-bottom: 1px solid #ffff;
+  width: 17.8em;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+.taskLi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding-left: 20px;
+  color: black;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px; /* Espaço entre checkbox e botão de lixeira */
+  align-items: center;
+}
+
+.clear {
+  clear: both;
+}
+
+.checkBox {
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 2px #016139;
+}
+
+.checkBox div {
+  width: 60px;
+  height: 60px;
+  background-color: #00ff80;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 100;
+}
+
+.checkBox input[type="checkbox"]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type="checkbox"] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.transition {
+  transition: 300ms ease;
+}
+
+.delete-button {
+  position: relative;
+  /* padding: 0.5em; */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.2s ease;
+}
+
+.trash-svg {
+  width: 2em; /* Ajustado para um tamanho menor */
+  height: 2em;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  overflow: visible;
+}
+
+#lid-group {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-button:hover #lid-group {
+  transform: rotate(-28deg) translateY(2px);
+}
+
+.delete-button:active #lid-group {
+  transform: rotate(-12deg) scale(0.98);
+}
+
+.delete-button:hover .trash-svg {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.delete-button:active .trash-svg {
+  transform: scale(0.96) rotate(-1deg);
+}
+
+.completed {
+  text-decoration: line-through; /* Adiciona um risco no texto */
+}
+
