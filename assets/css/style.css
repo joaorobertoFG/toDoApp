@@ -8,24 +8,13 @@
   position: sticky;
   font-family: "Roboto", serif;
   --primary-color: linear-gradient(
-    to right top,
-    #00160f,
-    #031715,
-    #091718,
-    #101719,
-    #151719,
-    #18191a,
-    #1a1a1b,
-    #1c1c1c,
-    #1f1f1f,
-    #212121,
-    #242424,
-    #272727
-  );
+    to right top, #00160f,#031715,#091718,#101719,#151719,#18191a, #1a1a1b,#1c1c1c,#1f1f1f,#212121,#242424,#272727);
 }
 
 html {
-  font-family: "Roboto", serif;
+  font-family: "Ubuntu Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
   background-image: var(--primary-color);
   color: #ced4da;
   display: flex;
@@ -56,7 +45,7 @@ html {
 }
 
 .todo-input--btn {
-  background-color: #66d2ce;
+  background-color: #578E7E;
   padding: 10px;
   margin: 10px 0 10px 0;
   border-radius: 0px 25px 25px 0px;
@@ -105,10 +94,14 @@ html {
 }
 
 .card {
+  font-family: "Ubuntu Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
   width: 21em;
   height: 27em;
   margin: 0 auto;
-  background-color: #011522;
+  background-color: #020202;
   border-radius: 8px;
   z-index: 1;
 }
