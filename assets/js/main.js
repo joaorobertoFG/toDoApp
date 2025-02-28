@@ -11,7 +11,7 @@ function createLi() {
 // Função para limpar o input
 function cleanInput() {
   input.value = "";
-  input.focus();
+  // input.focus();
 }
 
 // Criar uma nova tarefa
@@ -38,7 +38,7 @@ function createTask(textInput, completed = false) {
 
   li.appendChild(textSpan); // Adiciona o texto da tarefa
   li.appendChild(actionsDiv); // Adiciona os botões
-  tasks.appendChild(li);
+  tasks.prepend(li);
 
   cleanInput();
   saveTasks();
@@ -85,6 +85,7 @@ input.addEventListener("keypress", function (e) {
   if (e.keyCode === 13) {
     if (!input.value) return;
     createTask(input.value);
+    saveTasks();
   }
 });
 
@@ -142,14 +143,35 @@ function saveTasks() {
 
 // Restaurar tarefas do LocalStorage
 function addSavedTasks() {
-  const storedTasks = localStorage.getItem("tasks");
-  if (storedTasks) {
-    const taskList = JSON.parse(storedTasks);
-    for (let task of taskList) {
-      createTask(task.text, task.completed);
-    }
-  }
+  const tasks = localStorage.getItem("tasks");
+  if (!tasks) return;
+
+  const taskList = JSON.parse(tasks);
+
+  // Reverte a ordem para que as tarefas mais recentes fiquem no topo
+  taskList.reverse().forEach(task => {
+    createTask(task.text, task.completed);
+  });
 }
+
+
+document.addEventListener("deviceready", function() {
+  if (window.StatusBar) {
+      StatusBar.hide();
+  }
+});
+
+
+document.addEventListener("deviceready", function() {
+  AndroidFullScreen.immersiveMode(
+      function() { console.log("Modo tela cheia ativado!"); },
+      function(error) { console.log("Erro ao ativar tela cheia: " + error); }
+  );
+});
+
+document.addEventListener("deviceready", function() {
+  AndroidFullScreen.immersiveMode();
+});
 
 // Iniciar com tarefas salvas
 addSavedTasks();

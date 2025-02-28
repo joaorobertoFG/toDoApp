@@ -11,13 +11,20 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/ee76d41b3b.js"
       crossorigin="anonymous"
     ></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
   </head>
 
   <body>
@@ -36,19 +43,56 @@
       <div class="card__content">
         <section class="todo">
           <div class="todo__input-section">
-            <input class="todo-input" type="text" maxlength="23" />
+            <div class="card-clock noite dia" id="card-hora">
+              <div>
+                <span id="icon" class="sol-hidden">
+                  <i id="sol" class="fa-solid fa-sun "></i>
+                </span>
+                <span class="lua-hidden">
+                  <i class="fa-solid fa-moon lua-hidden"></i>
+                </span>
+              </div>
+              <p class="time-text">
+                <span> <span id="show-hour"></span><span id="segundos"></span></span
+                ><span class="time-sub-text"><span id="am-pm"></span></span>
+              </p>
+              <p class="day-text"><span id="show-date"></span></p>
+              </svg>
+            </div>
+            <!-- <input class="todo-input" type="text" maxlength="23" /> -->
+            
             <button class="todo-input--btn">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
           <span class="line"></span>
-          <ul class="tasks">
-            
-          </ul>
+          <ul class="tasks"></ul>
         </section>
+      </div>
+      <div class="input-container">
+        <input
+          
+          type="text"
+          class="input todo-input"
+          placeholder="Adicionar Tarefa"
+          maxlength="23"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="icon"
+        >
+          <g stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v16M4 12h16" />
+          </g>
+        </svg>
       </div>
     </div>
 
+    <script src="./assets/js/clock.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
